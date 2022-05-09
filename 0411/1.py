@@ -1,4 +1,5 @@
 '''
+<<<<<<< HEAD
 https://programmers.co.kr/learn/courses/30/lessons/42626
 '''
 '''
@@ -13,3 +14,7 @@ b = a
 a.append(4)
 
 print(b)
+=======
+https://programmers.co.kr/learn/courses/30/lessons/42627
+'''
+>>>>>>> ff10e067f40cb575daefc33684c032c12b11fca8
