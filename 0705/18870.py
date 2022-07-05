@@ -7,10 +7,9 @@ numbers = []
 
 numbers = list(map(int, input().split()))
 
-numbers2 = set(numbers)
-numbers2 = list(numbers2)
+numbers2 = list(sorted(set(numbers)))
 
-numbers2.sort()
+dic = {numbers2[i]: i for i in range(len(numbers2))}
 
-for number in numbers:
-    print(numbers2.index(number), end=' ')
+for i in numbers:
+    print(dic[i], end=' ')
