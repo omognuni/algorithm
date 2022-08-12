@@ -11,44 +11,36 @@ nums = []
 for i in range(n):
     nums.append(int(input()))
 
-nums = sorted(nums)
-print("\n".join(str(i) for i in nums))
+# nums = sorted(nums)
+# print("\n".join(str(i) for i in nums))
 
 # '''
 # 내장함수 안쓰고 퀵정렬 구현하기
 # '''
 
 
-# def quicksort(nums):
-#     if len(nums) <= 1:
-#         return
-#     start = 1
-#     end = len(nums) - 1 
-#     pivot = nums[0]
+def quicksort(nums, start, end):
+    if start >= end:
+        return
 
-#     while start <= end:
-#         print(start, end)
-#         if nums[start] > pivot and nums[end] < pivot:
-#             tmp = nums[start]
-#             nums[start] = nums[end]
-#             nums[end] = tmp
+    pivot = start
+    left = start + 1
+    right = end
 
+    while left <= right:
+        while left <= end and nums[left] <= nums[pivot]:
+            left += 1
+        
+        while right > start and nums[right] >= nums[pivot]:
+            right -= 1
 
-#         if nums[end] < pivot and start < len(nums) - 1:
-#             start += 1
+        if left <= right:
+            nums[right], nums[left] = nums[left], nums[right]
+        else:
+            nums[right], nums[pivot] = nums[pivot], nums[right]
 
-#         elif nums[start] > pivot and end > 0:
-#             end -= 1
-#         else:
-#             start += 1
-#             end -= 1
+    quicksort(nums, pivot, right - 1)
+    quicksort(nums, right + 1, end)
 
-#     tmp = nums[end]
-#     pivot = nums[end]
-#     nums[end] = tmp
-
-#     quicksort(nums[0:end])
-#     quicksort(nums[start:len(nums)])
-
-# quicksort(nums)
-# print(nums)
+quicksort(nums, 0, len(nums) - 1)
+print("\n".join(str(i) for i in nums))
