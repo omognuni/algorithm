@@ -10,4 +10,4 @@ B = []
 B = set(map(int, input().split()))
 
 inter = set(A & B)
-print(len(A) + len(B) - 2*len(inter))
+print(len(A) + len(B) - 2* len(inter))

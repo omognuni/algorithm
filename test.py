@@ -1,7 +1,6 @@
-def test(**kwargs):
-    print(kwargs)
+from collections import deque
+res = [['apple'],['orange'],['cat, dog, elephant']]
 
-test(a=1,b=2,c=3)
-payload = {'a': 1, 'b':2, 'c':3}
+res[2] = list(deque(['dog','cat', 'elephant']))
 
-test(**payload)
+print(res)
