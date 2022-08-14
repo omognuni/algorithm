@@ -1,4 +1,6 @@
 import sys
+
+# 파이썬으로 풀면 시간초과난다..
 input = sys.stdin.readline
 n = int(input())
 row = [0] * n
