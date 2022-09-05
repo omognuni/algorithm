@@ -13,6 +13,8 @@ answer = 0
 for i in range(n):
     graph.append(list(map(int, input().split())))
 
+# list 대입할 때는 deepcopy로 하는 습관
+
 
 def bfs():
     global answer
